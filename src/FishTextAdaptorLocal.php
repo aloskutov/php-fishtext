@@ -4,8 +4,17 @@ namespace App;
 
 class FishTextAdaptorLocal implements FishTextAdaptor
 {
+    /**
+     * @var string text data for generator
+     */
     private string $dataFile = __DIR__.'/includes/AdaptorOnline/text.php';
+    /**
+     * @var array|mixed generated text
+     */
     private array $text = [];
+    /**
+     * @var string data format
+     */
     private string $format = 'json';
 
     public function __construct()
@@ -13,7 +22,12 @@ class FishTextAdaptorLocal implements FishTextAdaptor
         $this->text = include $this->dataFile;
     }
 
-    private function generator()
+    /**
+     * Text generator
+     *
+     * @return string
+     */
+    private function generator(): string
     {
         $text = [];
         foreach ($this->text as $phrase) {
@@ -22,6 +36,12 @@ class FishTextAdaptorLocal implements FishTextAdaptor
         return implode(" ", $text);
     }
 
+    /**
+     * Title generator
+     *
+     * @param int $number
+     * @return string
+     */
     public function title(int $number = 1): string
     {
         $text = [];
@@ -37,6 +57,11 @@ class FishTextAdaptorLocal implements FishTextAdaptor
         return $text;
     }
 
+    /**
+     * Sentence generator
+     * @param int $number
+     * @return string
+     */
     public function sentence(int $number = 3): string
     {
         $text = [];
@@ -50,6 +75,12 @@ class FishTextAdaptorLocal implements FishTextAdaptor
         return $text;
     }
 
+    /**
+     * Paragraph generator
+     *
+     * @param int $number
+     * @return string
+     */
     public function paragraph(int $number = 3): string
     {
         $text = [];
@@ -59,12 +90,23 @@ class FishTextAdaptorLocal implements FishTextAdaptor
         return implode("\n\n", $text);
     }
 
+    /**
+     * Set data format
+     *
+     * @param string $format html or json
+     * @return void
+     */
     public function setFormat(string $format = 'json'): void
     {
         $format = strtolower($format);
         $this->format = ($format == 'json' || $format == 'html') ? $format : 'json';
     }
 
+    /**
+     * Get data format
+     *
+     * @return string
+     */
     public function getFormat(): string
     {
         return $this->format;
