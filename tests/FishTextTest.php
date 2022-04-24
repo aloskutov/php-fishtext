@@ -10,8 +10,11 @@ class FishTextTest extends TestCase
     public FishText $fishtext;
 
     /**
+     * @covers App\FishText::__construct
      * @covers App\FishText::setFormat
      * @covers App\FishText::getFormat
+     * @covers App\FishTextAdaptorFishText::getFormat
+     * @covers App\FishTextAdaptorFishText::setFormat
      * @return void
      */
     public function testFormat()
@@ -21,10 +24,12 @@ class FishTextTest extends TestCase
     }
 
     /**
+     * @covers App\FishText::__construct
      * @covers App\FishText::sentence
-     * @covers App\FishText::createQuery
-     * @covers App\FishText::getRequest
-     * @covers App\FishText::request
+     * @covers App\FishTextAdaptorFishText::createQuery
+     * @covers App\FishTextAdaptorFishText::getRequest
+     * @covers App\FishTextAdaptorFishText::request
+     * @covers App\FishTextAdaptorFishText::sentence
      * @return void
      */
     public function testSentence()
@@ -35,9 +40,12 @@ class FishTextTest extends TestCase
     /**
      * @covers App\FishText::setFormat
      * @covers App\FishText::paragraph
-     * @covers App\FishText::createQuery
-     * @covers App\FishText::getRequest
-     * @covers App\FishText::request
+     * @covers App\FishText::__construct
+     * @covers App\FishTextAdaptorFishText::createQuery
+     * @covers App\FishTextAdaptorFishText::getRequest
+     * @covers App\FishTextAdaptorFishText::request
+     * @covers App\FishTextAdaptorFishText::paragraph
+     * @covers App\FishTextAdaptorFishText::setFormat
      * @return void
      */
     public function testParagraph()
@@ -47,11 +55,14 @@ class FishTextTest extends TestCase
     }
 
     /**
+     * @covers App\FishText::__construct
      * @covers App\FishText::title
      * @covers App\FishText::setFormat
-     * @covers App\FishText::createQuery
-     * @covers App\FishText::getRequest
-     * @covers App\FishText::request
+     * @covers App\FishTextAdaptorFishText::createQuery
+     * @covers App\FishTextAdaptorFishText::getRequest
+     * @covers App\FishTextAdaptorFishText::request
+     * @covers App\FishTextAdaptorFishText::setFormat
+     * @covers App\FishTextAdaptorFishText::title
      * @return void
      */
     public function testTitle()
