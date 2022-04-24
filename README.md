@@ -13,6 +13,20 @@
 composer require aloskutov/php-fishtext
 ```
 
+## Адапторы
+
+Можно использовать один из двух адапторов для получения данных онлайн (с сайта https://fish-text.ru/) или генерировать локально из генератора текстов.
+
+Онлайн адаптор подключен по-умолчанию. Локальный генератор выдаёт данные намного быстрее, но заголовки генерируются в том же генераторе, что и текст, и мало похожи на заголовки.
+
+Использование локального генератора:
+
+```php
+use App\FishText;
+
+$fishtext = new FishText(new App\FishTextAdaptorLocal());
+```
+
 ## Данные
 
 Работает с тремя типами данных:
@@ -87,4 +101,5 @@ var_dump($fishtext->paragraph());
 
 ## TODO
 
-- [ ] add local generator adaptor
+- [x] add local generator adaptor
+- [ ] add local title generator
