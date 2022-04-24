@@ -11,7 +11,7 @@ class FishTextAdaptorLocal implements FishTextAdaptor
     /**
      * @var array|mixed generated text
      */
-    private array $text = [];
+    private array $text;
     /**
      * @var string data format
      */
@@ -59,6 +59,7 @@ class FishTextAdaptorLocal implements FishTextAdaptor
 
     /**
      * Sentence generator
+     *
      * @param int $number
      * @return string
      */
