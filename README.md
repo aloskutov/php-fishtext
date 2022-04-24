@@ -84,3 +84,7 @@ var_dump($fishtext->sentence());
 // Запрашиваем данные типа Абзац, по умолчанию три абзаца (по-умолчанию)
 var_dump($fishtext->paragraph());
 ```
+
+## TODO
+
+- [ ] add local generator adaptor
