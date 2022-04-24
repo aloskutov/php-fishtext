@@ -9,21 +9,21 @@ class FishTextAdaptorOnline implements FishTextAdaptor
     /**
      * @var string
      */
-    private $url = 'https://fish-text.ru/get';
+    private string $url = 'https://fish-text.ru/get';
 
     /**
      * @var array|int[][]
      */
-    private $types = [
+    private array $types = [
         'sentence' => ['min' => 1, 'max' => 500],
         'paragraph' => ['min' => 1, 'max' => 100],
         'title' => ['min' => 1, 'max' => 500]
     ];
 
     /**
-     * @var array|string[]
+     * @var array
      */
-    private $errorCode = [
+    private array $errorCode = [
         11 => "Превышен допустимый объём запрашиваемого контента",
         21 => "IP заблокирован на 120 секунд из-за превышения лимита обращений",
         22 => "IP заблокирован навсегда",
@@ -33,22 +33,21 @@ class FishTextAdaptorOnline implements FishTextAdaptor
     /**
      * @var string
      */
-    private $queryString ='';
+    private string $queryString ='';
 
     /**
      * @var string
      */
-    private $format = "json";
+    private string $format = "json";
 
     /**
      * Create query string
      *
      * @param string $type
      * @param int $number
-     * @param string $format
      * @return void
      */
-    private function createQuery(string $type, int $number)
+    private function createQuery(string $type, int $number): void
     {
         $this->queryString = http_build_query(
             array(
@@ -61,6 +60,7 @@ class FishTextAdaptorOnline implements FishTextAdaptor
 
     /**
      * @return ?string
+     * @throws Exception
      */
     private function getRequest(): ?string
     {
@@ -82,32 +82,52 @@ class FishTextAdaptorOnline implements FishTextAdaptor
      *
      * @param string $type
      * @param int $number
-     * @return false|string
+     * @return string
+     * @throws Exception
      */
     private function request(string $type, int $number)
     {
-        $number = $number < $this->types[$type]['min'] ? $this->types[$type]['min'] : $number;
-        $number = $number > $this->types[$type]['max'] ? $this->types[$type]['max'] : $number;
+        $number = max($number, $this->types[$type]['min']);
+        $number = min($number, $this->types[$type]['max']);
 
         $this->createQuery($type, $number);
         return $this->getRequest();
     }
 
+    /**
+     * @param int $number
+     * @return string
+     * @throws Exception
+     */
     public function sentence(int $number = 3): string
     {
         return $this->request('sentence', $number);
     }
 
+    /**
+     * @param int $number
+     * @return string
+     * @throws Exception
+     */
     public function paragraph(int $number = 3): string
     {
-        return $this->request('paragraph', $number);
+            return $this->request('paragraph', $number);
     }
 
+    /**
+     * @param int $number
+     * @return string
+     * @throws Exception
+     */
     public function title(int $number = 1): string
     {
         return $this->request('title', $number);
     }
 
+    /**
+     * @param string $format
+     * @return void
+     */
     public function setFormat(string $format = 'json'): void
     {
         $format = strtolower($format);
@@ -115,6 +135,9 @@ class FishTextAdaptorOnline implements FishTextAdaptor
         $this->format = ($format == 'json' || $format == 'html') ? $format : 'json';
     }
 
+    /**
+     * @return string
+     */
     public function getFormat(): string
     {
         return $this->format;
