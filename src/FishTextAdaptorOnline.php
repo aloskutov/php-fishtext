@@ -111,7 +111,7 @@ class FishTextAdaptorOnline implements FishTextAdaptor
      */
     public function paragraph(int $number = 3): string
     {
-            return $this->request('paragraph', $number);
+            return stripcslashes($this->request('paragraph', $number));
     }
 
     /**

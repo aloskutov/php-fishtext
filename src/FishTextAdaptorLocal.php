@@ -88,7 +88,7 @@ class FishTextAdaptorLocal implements FishTextAdaptor
         for ($i = 1; $i <= $number; $i++) {
             $text[] = $this->sentence(rand(2, 7));
         }
-        return implode("\n\n", $text);
+        return $this->format == 'json' ? implode("\n\n", $text) : implode("", $text);
     }
 
     /**

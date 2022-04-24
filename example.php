@@ -15,7 +15,7 @@ var_dump($fishtext->title());
 var_dump($fishtext->sentence());
 
 // Устанавливаем формат возвращаемых данных: HTML
-$fishtext->setFormat('html');
+$fishtext->setFormat('json');
 
 // Запрашиваем данные типа Абзац, по умолчанию три абзаца
 var_dump($fishtext->paragraph());
