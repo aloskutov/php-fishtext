@@ -11,7 +11,7 @@ class FishText
     public function __construct(FishTextAdaptor $adaptor = null)
     {
         if (!$adaptor) {
-            $adaptor = new FishTextAdaptorFishText();
+            $adaptor = new FishTextAdaptorOnline();
         }
         $this->adaptor = $adaptor;
     }

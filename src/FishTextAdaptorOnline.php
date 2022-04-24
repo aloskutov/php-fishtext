@@ -2,7 +2,9 @@
 
 namespace App;
 
-class FishTextAdaptorFishText implements FishTextAdaptor
+use Exception;
+
+class FishTextAdaptorOnline implements FishTextAdaptor
 {
     /**
      * @var string
@@ -10,7 +12,7 @@ class FishTextAdaptorFishText implements FishTextAdaptor
     private $url = 'https://fish-text.ru/get';
 
     /**
-     * @var array|\int[][]
+     * @var array|int[][]
      */
     private $types = [
         'sentence' => ['min' => 1, 'max' => 500],
@@ -68,7 +70,7 @@ class FishTextAdaptorFishText implements FishTextAdaptor
             $result = json_decode($response);
 
             if (property_exists($result, 'errorCode')) {
-                throw new \Exception($this->errorCode[$result->errorCode], $result->errorCode);
+                throw new Exception($this->errorCode[$result->errorCode], $result->errorCode);
             }
             return $result->text;
         }
