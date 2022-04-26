@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace ALoskutov\FishText;
 
 class FishTextAdaptorLocal implements FishTextAdaptor
 {

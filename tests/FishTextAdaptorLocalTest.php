@@ -1,8 +1,8 @@
 <?php
 
 
-use App\FishText;
-use App\FishTextAdaptorLocal;
+use ALoskutov\FishText\FishText;
+use ALoskutov\FishText\FishTextAdaptorLocal;
 use PHPUnit\Framework\TestCase;
 
 class FishTextAdaptorLocalTest extends TestCase
@@ -11,12 +11,12 @@ class FishTextAdaptorLocalTest extends TestCase
     public FishText $fishtext;
 
     /**
-     * @covers App\FishText::__construct
-     * @covers App\FishText::setFormat
-     * @covers App\FishText::getFormat
-     * @covers App\FishTextAdaptorLocal::__construct
-     * @covers App\FishTextAdaptorLocal::getFormat
-     * @covers App\FishTextAdaptorLocal::setFormat
+     * @covers ALoskutov\FishText\FishText::__construct
+     * @covers ALoskutov\FishText\FishText::setFormat
+     * @covers ALoskutov\FishText\FishText::getFormat
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::__construct
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::getFormat
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::setFormat
      * @return void
      */
     public function testFormat()
@@ -26,11 +26,11 @@ class FishTextAdaptorLocalTest extends TestCase
     }
 
     /**
-     * @covers App\FishText::__construct
-     * @covers App\FishText::sentence
-     * @covers App\FishTextAdaptorLocal::__construct
-     * @covers App\FishTextAdaptorLocal::generator
-     * @covers App\FishTextAdaptorLocal::sentence
+     * @covers ALoskutov\FishText\FishText::__construct
+     * @covers ALoskutov\FishText\FishText::sentence
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::__construct
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::generator
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::sentence
      * @return void
      */
     public function testSentence()
@@ -39,14 +39,14 @@ class FishTextAdaptorLocalTest extends TestCase
     }
 
     /**
-     * @covers App\FishText::setFormat
-     * @covers App\FishText::paragraph
-     * @covers App\FishText::__construct
-     * @covers App\FishTextAdaptorLocal::__construct
-     * @covers App\FishTextAdaptorLocal::generator
-     * @covers App\FishTextAdaptorLocal::paragraph
-     * @covers App\FishTextAdaptorLocal::sentence
-     * @covers App\FishTextAdaptorLocal::setFormat
+     * @covers ALoskutov\FishText\FishText::setFormat
+     * @covers ALoskutov\FishText\FishText::paragraph
+     * @covers ALoskutov\FishText\FishText::__construct
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::__construct
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::generator
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::paragraph
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::sentence
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::setFormat
      * @return void
      */
     public function testParagraph()
@@ -56,13 +56,13 @@ class FishTextAdaptorLocalTest extends TestCase
     }
 
     /**
-     * @covers App\FishText::__construct
-     * @covers App\FishText::title
-     * @covers App\FishText::setFormat
-     * @covers App\FishTextAdaptorLocal::__construct
-     * @covers App\FishTextAdaptorLocal::generator
-     * @covers App\FishTextAdaptorLocal::setFormat
-     * @covers App\FishTextAdaptorLocal::title
+     * @covers ALoskutov\FishText\FishText::__construct
+     * @covers ALoskutov\FishText\FishText::title
+     * @covers ALoskutov\FishText\FishText::setFormat
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::__construct
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::generator
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::setFormat
+     * @covers ALoskutov\FishText\FishTextAdaptorLocal::title
      * @return void
      */
     public function testTitle()

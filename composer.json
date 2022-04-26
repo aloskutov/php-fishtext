@@ -2,7 +2,7 @@
     "name": "aloskutov/php-fishtext",
     "type": "library",
     "description": "Get fish text from https://fish-text.ru/",
-    "keywords": ["text","lorem ipsum", "russian"],
+    "keywords": ["text", "generator", "lorem", "ipsum", "russian"],
     "homepage": "https://github.com/aloskutov/php-fishtext",
     "license": "MIT",
     "authors": [
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "ALoskutov\\FishText\\": "src/"
         }
     },
     "require": {

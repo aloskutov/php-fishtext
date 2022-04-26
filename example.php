@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 require_once("vendor/autoload.php");
 
-use App\FishText;
+use ALoskutov\FishText\FishText;
+use ALoskutov\FishText\FishTextAdaptorLocal;
 
-$fishtext = new FishText(new App\FishTextAdaptorLocal());
+$fishtext = new FishText(new FishTextAdaptorLocal());
 
 // Запрашиваем данные типа Заголовок, одно предложение (по-умолчанию)
 var_dump($fishtext->title());

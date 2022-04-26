@@ -22,9 +22,10 @@ composer require aloskutov/php-fishtext
 Использование локального генератора:
 
 ```php
-use App\FishText;
+use ALoskutov\FishText\FishText;
+use ALoskutov\FishText\FishTextAdaptorLocal;
 
-$fishtext = new FishText(new App\FishTextAdaptorLocal());
+$fishtext = new FishText(new FishTextAdaptorLocal());
 ```
 
 ## Данные
@@ -43,7 +44,7 @@ $fishtext = new FishText(new App\FishTextAdaptorLocal());
 Пример использования:
 
 ```php
-use App\FishText;
+use ALoskutov\FishText\FishText;
 
 $fishtext = new FishText();
 $fishtext->setFormat('json');
@@ -60,7 +61,7 @@ echo $fishtext->title();
 Пример использования:
 
 ```php
-use App\FishText;
+use ALoskutov\FishText\FishText;
 
 $fishtext = new FishText();
 $fishtext->setFormat('html');
@@ -82,7 +83,7 @@ declare(strict_types=1);
 
 require_once("vendor/autoload.php");
 
-use App\FishText;
+use ALoskutov\FishText\FishText;
 
 $fishtext = new FishText();
 
