@@ -15,7 +15,7 @@ class FishTextAdaptorLocal implements FishTextAdaptor
     /**
      * @var string data format
      */
-    private string $format = 'json';
+    private string $format = 'text';
 
     public function __construct()
     {
@@ -88,7 +88,7 @@ class FishTextAdaptorLocal implements FishTextAdaptor
         for ($i = 1; $i <= $number; $i++) {
             $text[] = $this->sentence(rand(2, 7));
         }
-        return $this->format == 'json' ? implode("\n\n", $text) : implode("", $text);
+        return $this->format == 'text' ? implode("\n\n", $text) : implode("", $text);
     }
 
     /**
@@ -97,10 +97,10 @@ class FishTextAdaptorLocal implements FishTextAdaptor
      * @param string $format html or json
      * @return void
      */
-    public function setFormat(string $format = 'json'): void
+    public function setFormat(string $format = 'text'): void
     {
         $format = strtolower($format);
-        $this->format = ($format == 'json' || $format == 'html') ? $format : 'json';
+        $this->format = ($format == 'text' || $format == 'html') ? $format : 'text';
     }
 
     /**

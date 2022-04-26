@@ -128,9 +128,10 @@ class FishTextAdaptorOnline implements FishTextAdaptor
      * @param string $format
      * @return void
      */
-    public function setFormat(string $format = 'json'): void
+    public function setFormat(string $format = 'text'): void
     {
         $format = strtolower($format);
+        $format = $format == 'text' ? 'json' : $format;
 
         $this->format = ($format == 'json' || $format == 'html') ? $format : 'json';
     }
@@ -140,6 +141,6 @@ class FishTextAdaptorOnline implements FishTextAdaptor
      */
     public function getFormat(): string
     {
-        return $this->format;
+        return ($this->format == 'json') ? 'text' : $this->format;
     }
 }

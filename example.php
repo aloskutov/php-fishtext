@@ -9,6 +9,9 @@ use ALoskutov\FishText\FishTextAdaptorLocal;
 
 $fishtext = new FishText(new FishTextAdaptorLocal());
 
+// Устанавливаем формат возвращаемых данных: text
+$fishtext->setFormat('text');
+
 // Запрашиваем данные типа Заголовок, одно предложение (по-умолчанию)
 var_dump($fishtext->title());
 
@@ -16,7 +19,7 @@ var_dump($fishtext->title());
 var_dump($fishtext->sentence());
 
 // Устанавливаем формат возвращаемых данных: HTML
-$fishtext->setFormat('json');
+$fishtext->setFormat('html');
 
 // Запрашиваем данные типа Абзац, по умолчанию три абзаца
 var_dump($fishtext->paragraph());

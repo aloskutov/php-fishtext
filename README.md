@@ -37,9 +37,9 @@ $fishtext = new FishText(new FishTextAdaptorLocal());
 
 ## Форматы
 
-Может возвращать данные в формате `JSON` или `HTML`. Формат указывается методом `setFormat()`, по-умолчанию установлен формат `JSON`.
+Может возвращать данные в формате `tex` или `html`. Формат указывается методом `setFormat()`, по-умолчанию установлен формат `text`.
 
-### JSON
+### text
 
 Пример использования:
 
@@ -47,16 +47,13 @@ $fishtext = new FishText(new FishTextAdaptorLocal());
 use ALoskutov\FishText\FishText;
 
 $fishtext = new FishText();
-$fishtext->setFormat('json');
+$fishtext->setFormat('text');
 echo $fishtext->title();
 ```
 
-На выходе строка обработанная `json_decode`.
+На выходе строка. При запросе нескольких параграфов, абзацы разделены символами `\n\n`.
 
-
-При запросе нескольких параграфов, абзацы разделены символами `\n\n`.
-
-### HTML
+### html
 
 Пример использования:
 

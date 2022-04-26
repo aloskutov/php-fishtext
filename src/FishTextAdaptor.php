@@ -12,7 +12,7 @@ interface FishTextAdaptor
 
     public function paragraph(int $number = 3): string;
 
-    public function setFormat(string $format = 'json'): void;
+    public function setFormat(string $format = 'text'): void;
 
     public function getFormat(): string;
 }
